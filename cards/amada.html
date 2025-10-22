@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Lembrar o quanto é amada 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0f1c2f, #070d1a);
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #ff7f9f;
+      margin-bottom: 20px;
+    }
+
+    #text {
+      max-width: 90%;
+      margin-bottom: 30px;
+      line-height: 1.7;
+      font-size: 1rem;
+      opacity: 0.9;
+      min-height: 120px;
+    }
+
+    img {
+      width: 85%;
+      max-width: 350px;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      animation: fadeInImage 1.5s ease forwards 3s;
+    }
+
+    @keyframes fadeInImage {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    button {
+      background: #ff7f9f;
+      border: none;
+      padding: 12px 28px;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 127, 159, 0.4);
+    }
+
+    button:hover {
+      background: #ff5f8a;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 430px) {
+      h1 { font-size: 1.6rem; }
+      #text { font-size: 0.95rem; }
+      button { padding: 10px 24px; font-size: 0.9rem; }
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Abre quando quiser lembrar o quanto é amada 💖</h1>
+  <p id="text"></p>
+
+  <img src="/src/foto2.jpeg" alt="Nosso amor" />
+
+  <button onclick="window.location.href='../index.html'">Voltar</button>
+
+  <footer>
+    Feito com amor, <span class="heart">❤️</span> por Everton Vinicius
+  </footer>
+
+  <script>
+    const text = "Amor, quero que você nunca duvide do quanto é amada… 💞 Cada gesto seu, cada sorriso, cada momento juntos me lembra que você é a pessoa mais especial da minha vida. Que essas palavras te envolvam e te façam sentir meu carinho e admiração por você, sempre, mesmo quando eu não estiver ao seu lado. 🤍";
+
+    const textElement = document.getElementById('text');
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        textElement.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 45);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>

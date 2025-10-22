@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Caixa do Futuro 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0f1c2f, #070d1a);
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #ff7f9f;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: #ffffff;
+      opacity: 0.9;
+      min-height: 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .text {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-align: center;
+    }
+
+    .heart {
+      color: #ff7f9f;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @media (max-width: 430px) {
+      h1 { font-size: 1.7rem; }
+      h2 { font-size: 1rem; }
+      .card { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Caixa do Futuro 💌</h1>
+  <h2 id="subtitle"></h2>
+
+  <div class="cards">
+    <a href="cards/saudade.html" class="card">
+      <span class="icon">💭</span>
+      <span class="text">Abre quando sentir saudade</span>
+    </a>
+
+    <a href="cards/triste.html" class="card">
+      <span class="icon">😢</span>
+      <span class="text">Abre quando estiver triste</span>
+    </a>
+
+    <a href="cards/dormir.html" class="card">
+      <span class="icon">🌙</span>
+      <span class="text">Abre quando for dormir pensando em nós</span>
+    </a>
+
+    <a href="cards/amada.html" class="card">
+      <span class="icon">💞</span>
+      <span class="text">Abre quando quiser lembrar o quanto é amada</span>
+    </a>
+
+    <a href="cards/briga.html" class="card">
+      <span class="icon">💔</span>
+      <span class="text">Abre quando a gente brigar por algo</span>
+    </a>
+
+    <a href="cards/ruim.html" class="card">
+      <span class="icon">🌤️</span>
+      <span class="text">Abre quando o dia parecer ruim</span>
+    </a>
+
+    <a href="cards/abraco.html" class="card">
+      <span class="icon">🤗</span>
+      <span class="text">Abre quando sentir falta do meu abraço</span>
+    </a>
+
+    <a href="cards/surpresa.html" class="card">
+      <span class="icon">💫</span>
+      <span class="text">Abre quando quiser uma surpresa</span>
+    </a>
+
+    <a href="cards/misterio.html" class="card">
+      <span class="icon">🔒</span>
+      <span class="text">Abre essa apenas quando eu pedir</span>
+    </a>
+  </div>
+
+  <footer>
+    Feito com amor, <span class="heart">❤️</span> por Everton Vinicius
+  </footer>
+
+  <script>
+    const text = "Só abra quando...";
+    const subtitle = document.getElementById("subtitle");
+    let index = 0;
+
+    function typeEffect() {
+      if (index < text.length) {
+        subtitle.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 80);
+      }
+    }
+
+    window.onload = typeEffect;
+  </script>
+</body>
+</html>
